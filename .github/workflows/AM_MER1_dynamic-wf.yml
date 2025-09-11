@@ -1,0 +1,25 @@
+name: dynamic-wf
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  am_generic_build_1:
+    uses: turbo5000c/am-reuseable-workflow/.github/workflows/am-generic-build.yml@develop
+    needs: main
+    with:
+      # Add any required inputs here
+      environment: production
+
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup workflow
+        run: echo "Starting dynamic workflow"
