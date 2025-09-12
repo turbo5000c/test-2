@@ -13,7 +13,7 @@ on:
 jobs:
   build:
     uses: >-
-      turbo5000c/am-reuseable-workflow/.github/workflows/AM_MER1_main-workflow.yml@main
+      turbo5000c/am-reuseable-workflow/.github/workflows/RW_MER1_main-workflow.yml@main
     secrets: inherit
   call-am-generic-build:
     uses: turbo5000c/meron/.github/workflows/am-generic-build
