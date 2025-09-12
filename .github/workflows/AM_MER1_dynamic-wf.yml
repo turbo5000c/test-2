@@ -11,10 +11,6 @@ name: MER1 Pipeline
       - develop
       - feat/**
 jobs:
-  build:
-    uses: >-
-      turbo5000c/am-reuseable-workflow/.github/workflows/RW_MER1_main-workflow.yml@main
-    secrets: inherit
   call-am-generic-build:
     uses: turbo5000c/am-reuseable-workflow/.github/workflows/am-generic-build.yml@main
     secrets:
