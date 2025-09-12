@@ -1,5 +1,5 @@
 name: MER1 Pipeline
-on:
+'on':
   workflow_dispatch: null
   push:
     paths-ignore:
