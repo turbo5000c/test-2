@@ -1,25 +1,21 @@
-name: dynamic-wf
-
+name: MER1 Pipeline
 on:
+  workflow_dispatch: null
   push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main ]
-
+    paths-ignore:
+      - .github/workflows/**
+      - renovate.json
+      - README.md
+    branches:
+      - main
+      - develop
+      - feat/**
 jobs:
-
-  am_generic_build_1:
-    uses: turbo5000c/am-reuseable-workflow/.github/workflows/AM_MER1_am-generic-build.yml@main
-    needs: main
-    with:
-      # Add any required inputs here
-      environment: production
-
-  main:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Setup workflow
-        run: echo "Starting dynamic workflow"
+  build:
+    uses: >-
+      turbo5000c/am-reuseable-workflow/.github/workflows/AM_MER1_main-workflow.yml@main
+    secrets: inherit
+  call-am-generic-build:
+    uses: turbo5000c/meron/.github/workflows/am-generic-build
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
