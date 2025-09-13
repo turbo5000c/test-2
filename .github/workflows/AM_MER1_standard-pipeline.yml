@@ -15,9 +15,3 @@ jobs:
     uses: >-
       turbo5000c/am-reuseable-workflow/.github/workflows/RW_MER1_main-workflow.yml@main
     secrets: inherit
-  call-am-generic-build:
-    uses: turbo5000c/meron/.github/workflows/am-generic-build
-    secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
-  call-reusable:
-    uses: turbo5000c/meron/.github/workflows/reusable-workflow.yml
