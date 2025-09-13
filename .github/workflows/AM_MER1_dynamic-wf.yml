@@ -12,6 +12,6 @@ name: MER1 Pipeline
       - feat/**
 jobs:
   call-am-generic-build:
-    uses: turbo5000c/am-reuseable-workflow/.github/workflows/am-generic-build2.yml@main
+    uses: turbo5000c/am-reuseable-workflow/.github/workflows/am-generic-build.yml@main
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
