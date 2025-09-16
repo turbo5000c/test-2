@@ -20,7 +20,3 @@ jobs:
       turbo5000c/am-reuseable-workflow/.github/workflows/AM_MER1_am-generic-build.yml@main
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
-  call-am-generic-build2:
-    uses: turbo5000c/meron/.github/workflows/am-generic-build2
-    secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
