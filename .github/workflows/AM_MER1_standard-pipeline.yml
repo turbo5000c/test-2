@@ -1,4 +1,4 @@
-name: MER1 Pipeline
+name: MER1 Pipeline2
 
 on:
   workflow_dispatch: null
