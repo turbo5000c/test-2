@@ -1,17 +1,11 @@
-name: MER1 Pipeline2
-
+name: standard-pipeline
 on:
   workflow_dispatch: null
   push:
-    paths-ignore:
-      - .github/workflows/**
-      - renovate.json
-      - README.md
     branches:
       - main
       - develop
       - feat/**
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,8 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Build
-        run: |
+        run: |-
           echo 'Building the project...'
+          echo 'Building the 123...'
+        shell: bash
       - name: Test
         run: |
           echo 'Running tests...'
