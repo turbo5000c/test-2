@@ -1,6 +1,8 @@
 ---
 title: Example Git diagram
 ---
+
+```
 gitGraph
    commit
    commit
@@ -12,3 +14,4 @@ gitGraph
    merge develop
    commit
    commit
+```
