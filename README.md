@@ -16,3 +16,7 @@ gitGraph
   checkout acpt
   branch prod
   merge acpt tag: "promote→prod"
+
+
+graph LR
+  A[sandbox] --> B[dev] --> C[acpt] --> D[prod]
