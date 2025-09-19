@@ -13,19 +13,33 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Build
-        run: |-
+        run: |
           echo 'Building the project...'
-          echo 'Building the 123...'
+          npm install
+          npm run build
         shell: bash
       - name: Test
         run: |
           echo 'Running tests...'
+          npm test
       - name: Code Quality
         run: |
           echo 'Checking code quality...'
+          npm run lint
+  security_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Security Scanning
+        uses: github/codeql-action/codeql-analysis@v2
+        with:
+          languages: javascript
+  build_container:
+    runs-on: ubuntu-latest
+    steps:
       - name: Build Container
         run: |
           echo 'Building Docker container...'
+          docker build -t myapp .
   job-2:
     runs-on: ubuntu-latest
     steps:
