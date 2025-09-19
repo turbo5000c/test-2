@@ -1,6 +1,6 @@
 # test-2
 
-gitGraph
+```gitGraph
   commit id: "feat"
   branch sandbox
   commit id: "sandbox work"
@@ -16,7 +16,7 @@ gitGraph
   checkout acpt
   branch prod
   merge acpt tag: "promote→prod"
-
-
-graph LR
+```
+```graph LR
   A[sandbox] --> B[dev] --> C[acpt] --> D[prod]
+```
