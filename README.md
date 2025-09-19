@@ -2,8 +2,8 @@
 title: Example Git diagram
 ---
 
-```
-gitGraph
+
+```gitGraph
    commit
    commit
    branch develop
