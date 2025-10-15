@@ -8,6 +8,7 @@ on:
       - main
       - develop
       - feat/**
+      - feature
 jobs:
   build:
     runs-on: ubuntu-latest
