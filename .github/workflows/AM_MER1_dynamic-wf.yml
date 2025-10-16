@@ -1,17 +1,1 @@
-#test workflow
-name: test workflow
-
-on:
-  workflow_dispatch: null
-  push:
-    branches:
-      - main
-      - develop
-      - feat/**
-      - feature
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+#testttt123
