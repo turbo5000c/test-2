@@ -14,5 +14,19 @@ jobs:
         with:
           node-version: '20'
       - name: Install dependencies
-        run: npm install
-    name: Build
+        run: |- 
+          if [ "something" == true ]]; then 
+            echo "triue"
+          else 
+            echo "false"
+          fi
+        shell: sh
+      - name: Build Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile
+          push: false
+    - name: upload
+        uses: actions/upload-artifact@v4
+      name: Build
