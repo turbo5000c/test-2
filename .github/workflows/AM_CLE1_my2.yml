@@ -13,4 +13,4 @@ jobs:
       - name: Build
         run: dotnet build MyDotNetApp.csproj
       - name: Test
-        run: dotnet test MyDotNetApp.Tests.csproj
+        run: dotnet test MyDotNetApp.Tests.csproj 
