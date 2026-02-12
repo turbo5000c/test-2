@@ -1,0 +1,39 @@
+# --------------------------------------------------------------------
+# ⚠️  THIS FILE IS MANAGED BY DEVOPS AUTOMATION
+#
+# 👉 What this means:
+# - Changes may be overwritten by the central DevOps workflow.
+#
+# 👉 How to merge updates:
+# - When you receive a DevOps workflow update PR, simply MERGE it to the
+#   target branch (for most repos, this is `main`).
+# - Do NOT cherry-pick or manually copy changes — always merge the PR.
+# - If you hit a merge conflict in `.github/*`, contact DevOps.
+# --------------------------------------------------------------------
+#
+name: Standard Maven Pipeline
+
+on:
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - '.github/**'
+      - 'renovate.json'
+      - 'README.md'
+    branches:
+      - 'feat/**'
+      - 'feature/**'
+      - 'bugfix/**'
+      - 'hotfix/**'
+      # Multiple develop branches for different environments/testing
+      - 'develop-1'
+      - 'develop-2'
+      - 'develop-3'
+      - 'integration'
+      - 'release/*'
+# Standard Maven Pipeline Caller
+jobs:
+  build:
+    if: github.ref != 'refs/heads/main' # make sure main does not overwrite prod deployed tags. 
+    uses: org/ci-reusable-workflows/.github/workflows/main-maven-workflow.yml@main
+    secrets: inherit
