@@ -1,0 +1,30 @@
+# --------------------------------------------------------------------
+# ⚠️  THIS FILE IS MANAGED BY DEVOPS AUTOMATION
+#
+# 👉 What this means:
+# - Changes may be overwritten by the central DevOps workflow.
+#
+# 👉 How to merge updates:
+# - When you receive a DevOps workflow update PR, simply MERGE it to the
+#   target branch (for most repos, this is `main`).
+# - Do NOT cherry-pick or manually copy changes — always merge the PR.
+# - If you hit a merge conflict in `.github/*`, contact DevOps.
+# --------------------------------------------------------------------
+#
+name: Pull Request Release Pipeline
+
+on:        
+  pull_request:
+    types: [opened,reopened,labeled]
+    branches:
+      - main
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+#!======================================= BETA =======================================!#
+  helm-main-workflow:
+    uses: org/ci-reusable-workflows/.github/workflows/main-helm-beta-workflow.yml@main
+    secrets: inherit
