@@ -12,7 +12,6 @@
 # --------------------------------------------------------------------
 #
 name: Standard Maven Pipeline
-
 on:
   workflow_dispatch:
   push:
@@ -34,5 +33,5 @@ on:
 jobs:
   build:
     if: github.ref != 'refs/heads/main' # make sure main does not overwrite prod deployed tags. 
-    uses: org/ci-reusable-workflows/.github/workflows/main-maven-workflow.yml@main
+    uses: org/ci-reusable-workflows/.github/workflows/main-maven-workflow.yml@develop
     secrets: inherit
